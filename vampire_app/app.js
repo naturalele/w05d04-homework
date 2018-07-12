@@ -1,3 +1,7 @@
+const mongoose = require("mongoose");
+const db = mongoose.connection;
+const Vampires = require('./models/app.js');
+
 // 1. Require your node modules
 
 // 2. Require your model (and possibly your extra data source);
