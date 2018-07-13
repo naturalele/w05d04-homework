@@ -251,16 +251,46 @@ app.on('connected', () => {
 //   }
 // });
 
-Vampires.find({'victims': {$gt: 150}} && {'victims': {$lt: 500}}, (err, resVictims) => {
-  if(err) {
-    console.log("not found");
-  } else {
-    console.log("FOUND");
-  }
-});
+// Vampires.find({'victims': {$gt: 150}} && {'victims': {$lt: 500}}, (err, resVictims) => {
+//   if(err) {
+//     console.log("not found");
+//   } else {
+//     console.log("FOUND");
+//   }
+// });
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
+// Vampires.find({'title': {$exists: true}}, (err, resTitle) => {
+//   if(err) {
+//     console.log("NOT FOUND");
+//   } else {
+//     console.log("FOUND");
+//   }
+// })
 
+// Vampires.find({'title': {$exists: false}}, (err, resTitle) => {
+//   if(err) {
+//     console.log("NOT FOUND");
+//   } else {
+//     console.log(resTitle);
+//   }
+// })
+
+// Vampires.find({'title': {$exists: true} && {'victims': null}}, (err, resand) => {
+//   if(err) {
+//     console.log("NOT FOUND");
+//   } else {
+//     console.log("FOUND");
+//   }
+// })
+
+// Vampires.find({'victims': {$exists: true}} && {'victims': {$gt: 1000}}, (err, resvictims) => {
+//   if(err) {
+//     console.log("NOT FOUND");
+//   } else {
+//     console.log(resvictims);
+//   }
+// })
 /////////////////////////////////////////////////
 // ### Select with OR
 
