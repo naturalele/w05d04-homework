@@ -137,5 +137,5 @@
   }
 ]
 
-module.exports = vampiresData;
+
 

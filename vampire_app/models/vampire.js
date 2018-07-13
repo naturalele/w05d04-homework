@@ -7,7 +7,7 @@ const vampireSchema = new Schema({
 	hair_color: {type: String, default: "blonde"},
 	eye_color: {type: String},
 	dob: Date,
-	loves: [{body: String}],
+	loves: [String],
 	location: String,
 	gender: String,
 	victims: Number, minimum: 0
