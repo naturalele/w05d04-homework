@@ -294,6 +294,51 @@ app.on('connected', () => {
 /////////////////////////////////////////////////
 // ### Select with OR
 
+// Vampires.find({ $or:[{'location': {$eq: ['New York, New York, US']}}, {'location': {$eq: ['New Orleans, Louisiana, US']}}]}, (err, location) => {
+//   if(err) {
+//     console.log("error");
+//   } else {
+//     console.log(location)
+//   }
+// })
+
+// Vampires.find({ $or:[{'loves': {$eq: 'brooding'}}, {'loves': {$eq: 'being tragic'}}]},
+//   (err, loves) => {
+//   if(err) {
+//     console.log("error");
+//   } else {
+//     console.log(loves)
+//   }
+// });
+
+// Vampires.find({ $or:[{'loves': {$eq: 'brooding'}}, {'loves': {$eq: 'being tragic'}}]},
+//   (err, loves) => {
+//   if(err) {
+//     console.log("error");
+//   } else {
+//     console.log(loves)
+//   }
+// });
+
+// Vampires.find({ $or:[{'victims': {$gt : 1000}}, {'loves': {$eq : 'marshmallows'}}]},
+//   (err, loves) => {
+//   if(err) {
+//     console.log("error");
+//   } else {
+//     console.log(loves)
+//   }
+// });
+  
+  // Vampires.find({ $or:[{"hair_color": {$eq: 'red'}}, {"eye_color": {$eq: 'green'}}]},
+  //     (err, colors) => {
+  //       if(err) {
+  //       console.log("error");
+  //     } else {
+  //       console.log(colors)
+  //       }
+  //     });
+
+
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
 
