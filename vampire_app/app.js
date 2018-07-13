@@ -14,6 +14,23 @@ app.on('connected', () => {
 });
 
 
+
+// 1. Require your node modules
+
+// 2. Require your model (and possibly your extra data source);
+
+// 3. Connect your database and collection name
+
+// 4. Open your mongoose connection
+
+/////////////////////////////////////////////////
+//Write your answers to add, query, update, remove, and Hungry for More below.
+
+// Note: Remember to close your connection after you add, update, remove from your database
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// INSERT USING MONGOOSE
+
 // Vampires.collection.insertMany([
 //   {
 //     name: 'Count Chocula',
@@ -156,70 +173,91 @@ app.on('connected', () => {
 //     mongoose.connection.close();
 //   });
 
-
-
-Vampires.create(
-  {
-    name: 'Ed Booch',
-    dob: new Date(221, 0, 24, 13, 0),
-    hair_color: 'orange',
-    eye_color: 'green',
-    loves: ['kittens', 'ducks', 'kombocha'],
-    location: 'Hilo, Hawaii',
-    gender: 'm',
-    victims: 1230
-  },
-{
-    name: 'Fancy Pants',
-    dob: new Date(202, 0, 24, 13, 0),
-    hair_color: 'yellow',
-    eye_color: 'green',
-    loves: ['milk', 'peonies', 'blue jays'],
-    location: 'London, England',
-    gender: 'f',
-    victims: 123
-  },{
-    name: 'Tom Henkle',
-    dob: new Date(160, 8, 7, 22, 10),
-    hair_color: 'black',
-    eye_color: 'black',
-    loves: ['edamame', 'rap music','beef'],
-    location: 'Tokyo, Japan',
-    gender: 'm',
-    victims: 80
-  },(err, resVampires) => {
-  	if(err){
-  		console.log("vampire NOT added");
-  	} else {
-  		console.log("resVampires");
-  	}
-  	})
-// 1. Require your node modules
-
-// 2. Require your model (and possibly your extra data source);
-
-// 3. Connect your database and collection name
-
-// 4. Open your mongoose connection
-
-/////////////////////////////////////////////////
-//Write your answers to add, query, update, remove, and Hungry for More below.
-
-// Note: Remember to close your connection after you add, update, remove from your database
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// INSERT USING MONGOOSE
-
-
 // ### Add the vampire data that we gave you
 
 // ### Add some new vampire data
+
+// Vampires.create(
+//   {
+//     name: 'Ed Booch',
+//     dob: new Date(221, 0, 24, 13, 0),
+//     hair_color: 'orange',
+//     eye_color: 'green',
+//     loves: ['kittens', 'ducks', 'kombocha'],
+//     location: 'Hilo, Hawaii',
+//     gender: 'm',
+//     victims: 1230
+//   },
+// {
+//     name: 'Fancy Pants',
+//     dob: new Date(202, 0, 24, 13, 0),
+//     hair_color: 'yellow',
+//     eye_color: 'green',
+//     loves: ['milk', 'peonies', 'blue jays'],
+//     location: 'London, England',
+//     gender: 'f',
+//     victims: 123
+//   },{
+//     name: 'Tom Henkle',
+//     dob: new Date(160, 8, 7, 22, 10),
+//     hair_color: 'black',
+//     eye_color: 'black',
+//     loves: ['edamame', 'rap music','beef'],
+//     location: 'Tokyo, Japan',
+//     gender: 'm',
+//     victims: 80
+//   },(err, resVampires) => {
+//     if(err){
+//       console.log("vampire NOT added");
+//     } else {
+//       console.log("resVampires");
+//     }
+//     })
 
 /////////////////////////////////////////////////
 // ## QUERYING
 /////////////////////////////////////////////////
 // ### Select by comparison
 
+// Vampires.find({'gender': 'f'}, (err, resFemales) => {
+//   if(err){
+//     console.log("females not found");
+//   } else {
+//     console.log("FEMALES FOUND!");
+//   }
+// });
+
+// Vampires.find({'victims': {$gt : 500}}, (err, resVictims) => {
+//   if(err){
+//     conosle.log("victims not found");
+//   } else {
+//     console.log("VICTIMS FOUND")
+//   }
+// });
+
+// Vampires.find({'victims': {$lt : 150}}, (err, resVictims) => {
+//   if(err){
+//     console.log("victims not found");
+//   } else {
+//     console.log("VICTIMS FOUND");
+//   }
+// });
+
+// Vampires.find({'victims': {$ne: 210234}}, (err, resVictims) => {
+//   if(err) {
+//     console.log("not found");
+//   } else {
+//     console.log("FOUND");
+//   }
+// });
+
+Vampires.find({'victims': {$gt: 150}} && {'victims': {$lt: 500}}, (err, resVictims) => {
+  if(err) {
+    console.log("not found");
+  } else {
+    console.log("FOUND");
+  }
+});
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
 
