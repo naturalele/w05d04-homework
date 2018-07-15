@@ -4,6 +4,8 @@ const Schema = mongoose.Schema;
 
 const vampireSchema = new Schema({
 	name: {type: String, required: true},
+	portrayed_by: String,
+	is_actually: String,
 	hair_color: {type: String, default: "blonde"},
 	eye_color: {type: String},
 	dob: Date,

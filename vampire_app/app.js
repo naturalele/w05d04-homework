@@ -425,6 +425,35 @@ app.on('connected', () => {
 /////////////////////////////////////////////////
 // ## REPLACE
 
+// Vampires.replaceOne(
+//   {'name': 'Claudia'},
+//   {'name': 'Eve', "portrayed_by": 'Tilda Swinton'},
+ //    (err, res) => {
+//     if(err){
+//       console.log("error");
+//     } else{
+//       console.log("worked");
+//     }
+// });
+// *** Returning null value, I believe due to portrayed being null to begin with **
+
+
+// Vampires.replaceOne(
+//   {'name': 'Guy Man'},
+//   {'name': 'ooo this guy', "is_actually": 'were-lizard'},
+//   (err, res) => {
+//     if(err){
+//       console.log("error");
+//     } else{
+//       console.log("worked");
+//     }
+// });
+
+
+
+
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
