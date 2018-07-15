@@ -425,22 +425,23 @@ app.on('connected', () => {
 /////////////////////////////////////////////////
 // ## REPLACE
 
-// Vampires.replaceOne(
-//   {'name': 'Claudia'},
-//   {'name': 'Eve', "portrayed_by": 'Tilda Swinton'},
- //    (err, res) => {
+// Vampires.findOneAndUpdate(
+//   {name: 'Claudia'},
+//   {$set: { name: 'Eve', portrayed_by: 'Tilda Swinton'}},
+//   {new: true},
+//     (err, res) => {
 //     if(err){
 //       console.log("error");
 //     } else{
-//       console.log("worked");
+//       console.log(res);
 //     }
 // });
-// *** Returning null value, I believe due to portrayed being null to begin with **
 
 
-// Vampires.replaceOne(
-//   {'name': 'Guy Man'},
-//   {'name': 'ooo this guy', "is_actually": 'were-lizard'},
+// Vampires.findOneAndUpdate(
+//   { gender: 'm' },
+//   { $set: { name: 'Guy Man', is_actually: 'were-lizard' } },
+//    {new: true},
 //   (err, res) => {
 //     if(err){
 //       console.log("error");
@@ -449,18 +450,108 @@ app.on('connected', () => {
 //     }
 // });
 
-
-
-
-
-
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
 
+// Vampires.findOneAndUpdate(
+//   { name: 'Guy Man' },
+//   { $set: { gender: 'f'}},
+//   {new: true},
+//   (err, res) => {
+//     if(err){
+//       console.log("error");
+//     } else{
+//       console.log(res);
+//     }
+//   });
+
+// Vampires.findOneAndUpdate(
+//   { name: 'Eve' },
+//   { $set: {gender: 'm'}},
+//   {new: true},
+//   (err, res) => {
+//     if(err){
+//       console.log("error");
+//     } else{
+//       console.log(res);
+//     }
+//   });
+
+// Vampires.findOneAndUpdate(
+//   { name: 'Guy Man' },
+//   {$set: {hates: ['clothes', 'jobs']}},
+//   {new: true},
+//   (err, res) => {
+//     if(err){
+//       console.log("error");
+//     } else{
+//       console.log(res);
+//     }
+//   });
+
+// Vampires.findOneAndUpdate(
+//   { name: 'Guy Man' },
+//   {$push: {hates: ['alarm clocks', 'jackalopes']}},
+//   {new: true},
+//   (err, res) => {
+//     if(err){
+//       console.log("error");
+//     } else{
+//       console.log(res);
+//     }
+//   });
+
+// Vampires.findOneAndUpdate(
+//   { name: 'Eve' },
+//   {$rename: {name: 'moniker'}},
+//   {new: true},
+//   (err, res) => {
+//     if(err){
+//       console.log("error");
+//     } else{
+//       console.log(res);
+//     }
+//   });
+
+// Vampires.updateMany(
+//   {gender: 'f'},
+//   {$set: {gender: 'fems'}},
+//    {new: true},
+//     (err, res) => {
+//     if(err){
+//       console.log("error");
+//     } else{
+//       console.log(res);
+//     }
+//   });
+
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REMOVE
+
+// Vampires.remove(
+//   {hair_color: 'brown'},
+//   (err, res) => {
+//     if(err){
+//       console.log("error");
+//     } else{
+//       console.log(res);
+//     }
+//   });
+
+// Vampires.remove(
+//   {eye_color: 'blue'},
+//   (err, res) => {
+//     if(err){
+//       console.log("error");
+//     } else{
+//       console.log(res);
+//     }
+//   });
+
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
