@@ -341,9 +341,85 @@ app.on('connected', () => {
 
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
+// Vampires.find({ $or:[{'loves': {$eq: "frilly shirtsleeves"}}, {'loves': {$eq: "frilly collars"}}]},
+//   (err, shirts) => {
+//     if(err) {
+//       console.log("error");
+//     } else {
+//       console.log(shirts);
+//     }
+//   });
+
+// Vampires.find({'loves': {$eq: 'brooding'}},
+//     (err, brooding) => {
+//     if(err) {
+//       console.log("error");
+//     } else {
+//       console.log(brooding);
+//     }
+//   });
+  
+// Vampires.find({ $or: [{'loves': {$eq: "appearing innocent"}}, {'loves': {$eq: 'trickery'}}, {'loves': {$eq: 'lurking in rotting mansions'}}, {'loves': {$eq: "R&B music"}}]},
+//   (err, lovelist)=> {
+//     if(err) {
+//       console.log("error");
+//     } else {
+//       console.log(lovelist);
+//     }
+//   });
+
+// Vampires.find({ $and: [{'loves': {$eq: "fancy coats"}}, {$or: [{'loves': {$nin: "top hats"}}, {'loves': {$nin: "virgin blood"}}]}]},
+
+//   (err, conditions) => {
+//     if(err) {
+//       console.log("error");
+//     } else {
+//       console.log(conditions);
+//     }
+//   });
+//*** error
 
 /////////////////////////////////////////////////
 //### Negative Selection
+
+// Vampires.find({ $or: [{'loves': {$eq: 'ribbons'}}, {'eye_color': {$not: {$eq: 'brown'}}}]},
+//   (err, eyes) => {
+//     if(err){
+//     console.log("error");
+//   } else{
+//     console.log(eyes);
+//   }
+//   })
+
+// Vampires.find({'location': {$not: {$eq: ['Rome, Italy']}}},
+//     (err, location) => {
+//     if(err){
+//     console.log("error");
+//   } else{
+//     console.log(location);
+//   }
+//   })
+
+// Vampires.find({ $and: [{'loves': {$nin: ['fancy cloaks']}}, {'loves': {$nin: ['frilly shirtsleeves']}}, 
+// {'loves': {$nin: ['appearing innocent']}}, {'loves': {$nin: ['being tragic']}}, 
+// {'loves': {$nin: ['brooding']}}]},
+//     (err, lovehates) => {
+//     if(err){
+//     console.log("error");
+//   } else{
+//     console.log(lovehates);
+//   }
+//   })
+
+// Vampires.find({'victims': {$not: {$gt: 200}}},
+//    (err, victims) => {
+//     if(err){
+//     console.log("error");
+//   } else{
+//     console.log(victims);
+//   }
+//   })
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
