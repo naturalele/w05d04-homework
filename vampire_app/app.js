@@ -437,6 +437,8 @@ app.on('connected', () => {
 //     }
 // });
 
+//** difference?
+
 
 // Vampires.findOneAndUpdate(
 //   { gender: 'm' },
@@ -531,7 +533,7 @@ app.on('connected', () => {
 /////////////////////////////////////////////////
 // ## REMOVE
 
-// Vampires.remove(
+// Vampires.removeOne(
 //   {hair_color: 'brown'},
 //   (err, res) => {
 //     if(err){
@@ -541,7 +543,7 @@ app.on('connected', () => {
 //     }
 //   });
 
-// Vampires.remove(
+// Vampires.removeMany(
 //   {eye_color: 'blue'},
 //   (err, res) => {
 //     if(err){
